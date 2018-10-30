@@ -41,3 +41,13 @@ func (api *API) Call(name string, params map[string]string) error {
 
 	return nil
 }
+
+func (api *API) ResourceNames() []string {
+	resources := []string{}
+
+	for k := range api.Resources {
+		resources = append(resources, k)
+	}
+
+	return resources
+}
